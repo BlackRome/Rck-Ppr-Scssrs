@@ -1,0 +1,24 @@
+#This will import the random function so that the computer can chose from one of the three options
+from random import randint
+ 
+P1 = randint(0,2) #Declares which option player 1 has chosen
+P2 = input("Chose one from the following: rock, paper, scissors") #Declares which option player 2 has chosen
+ 
+#this will change the answers of P2 to 0,1 or 2 so it is easy to compare in later code
+if P2 == "scissors":
+    P2 = 2
+elif P2 == "paper":
+    P2 = 1
+else:
+    P2 = 0
+ 
+outcome = ["Rock", "Paper", "Scissors"] #This will allow the option chosen in the above lines to set to a certain word
+print ("Player 1 has chosen " + outcome[P1])
+print ("Player 2 has chosen " + outcome[P2])
+ 
+if P1 == P2: # if both outcomes are the same, print draw
+    print("It's a draw!")
+elif P1 == 0 and P2 == 2 or P1 ==1 and P2 ==0 or P1 == 2 and P2 == 1: # provide list of rules if P1 has won
+    print("Player One Wins!")
+else:
+    print("Player Two Wins!")
